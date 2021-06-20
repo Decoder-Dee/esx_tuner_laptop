@@ -23,7 +23,7 @@ function menuToggle(bool,send=false) {
 		$("body").hide();
 	} 
 	if(send){
-		$.post('http://tunerchip/togglemenu', JSON.stringify({state:false}));
+		$.post('http://esx_tuner_laptop/togglemenu', JSON.stringify({state:false}));
 	}
 }
 
@@ -39,7 +39,7 @@ $(function(){
 	$("#defaultbtn").click(function(){setSliderValues({boost:0.25,fuelmix:1.3,gearchange:9,braking:0.5,drivetrain:0.5,brakeforce:1.4});});	
 	$("#savebtn").click(function(){
 		initiateTyepwriter();
-		$.post('http://tunerchip/save', JSON.stringify(getSliderValues()));
+		$.post('http://esx_tuner_laptop/save', JSON.stringify(getSliderValues()));
 	});
 	$("#exitProgram").click(function(){
 		menuToggle(false,true);
